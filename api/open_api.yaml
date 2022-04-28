@@ -51,21 +51,14 @@ paths:
           required: true
           schema:
             type: string
-        - name: since
+        - name: at
           in: query
-          description: the earliest date to obtain data
+          description: the date of the interest
           schema:
             type: string
             format: 'date-time'
           required: true
-        - name: till
-          in: query
-          description: the latest date to obtain data
-          required: false
-          schema:
-            type: string
-            format: 'date-time'
-            default: '2032-12-31T23:59:59.0Z'
+
       responses:
         '200':
           description: A list of data points
