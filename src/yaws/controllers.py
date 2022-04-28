@@ -1,11 +1,14 @@
 
+pimpl = None
+
+
 def list_parks():
-    return f"All parks"
+    return pimpl.list_parks()
 
 
 def get_park_info(name):
-    return f'Name {name}'
+    return pimpl.get_park_info(name)
 
 
-def get_park_production(name, since, till):
-    return f'Name {name} from {since} to {till}'
+def get_park_production(name, at):
+    return pimpl.get_park_production(name, at)
