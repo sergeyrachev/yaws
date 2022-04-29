@@ -1,15 +1,13 @@
-from alpine:latest as build-env
-run apk install maven jq python make
+from ubuntu:latest
+
+arg DEBIAN_FRONTEND=noninteractive
+
+run apt update
+run apt install -y python3 make python3-pip
 
 add . /tmp/yaws
 workdir /tmp/yaws
 
-run make prereq
+run pip install -r requirements.txt
+cmd python3 src/__main__.py -d /tmp/resources
 
-from build-env as build
-
-add . /tmp/yaws
-workdir /tmp/yaws
-
-run make generate
-run make service

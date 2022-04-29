@@ -1,0 +1,4 @@
+flask
+connexion[swagger-ui]
+werkzeug
+pandas
