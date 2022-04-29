@@ -25,6 +25,13 @@ paths:
     get:
       summary: Returns a park info
       operationId: yaws.controllers.get_park_info
+      parameters:
+        - name: name
+          in: path
+          description: The park to get production info from
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: A object containing park info
